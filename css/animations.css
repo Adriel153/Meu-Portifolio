@@ -1,0 +1,247 @@
+@keyframes loadbar {
+    from {
+        transform: scaleX(.08)
+    }
+
+    to {
+        transform: scaleX(1)
+    }
+}
+
+@keyframes scrollwheel {
+    0% {
+        transform: translateY(0);
+        opacity: 1
+    }
+
+    75% {
+        transform: translateY(7px);
+        opacity: 0
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0
+    }
+}
+
+@keyframes soft-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 8px 30px #42c28b45
+    }
+
+    50% {
+        box-shadow: 0 8px 35px #42c28b66, 0 0 0 5px #42c28b0c
+    }
+}
+
+@keyframes float-soft {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-9px)
+    }
+}
+
+.hero-intro,
+.hero-name,
+.hero h1,
+.hero-lead,
+.hero-description,
+.hero-tags,
+.hero-actions,
+.scroll-cue {
+    opacity: 0;
+    animation: hero-enter .72s var(--ease) forwards
+}
+
+.hero-intro {
+    animation-delay: .12s
+}
+
+.hero-name {
+    animation-delay: .2s
+}
+
+.hero h1 {
+    animation-delay: .28s
+}
+
+.hero-lead {
+    animation-delay: .38s
+}
+
+.hero-description {
+    animation-delay: .46s
+}
+
+.hero-tags {
+    animation-delay: .54s
+}
+
+.hero-actions {
+    animation-delay: .62s
+}
+
+.scroll-cue {
+    animation-delay: .78s
+}
+
+.hero-visual {
+    opacity: 0;
+    animation: hero-visual-enter 1s .3s var(--ease) forwards
+}
+
+.portrait-aura {
+    animation: float-soft 7s ease-in-out infinite
+}
+
+.floating-chip {
+    animation: float-soft 5s ease-in-out infinite
+}
+
+.floating-code {
+    animation: float-soft 6s .4s ease-in-out infinite
+}
+
+.hero-orb-one {
+    animation: orb-drift 16s ease-in-out infinite alternate
+}
+
+.hero-orb-two {
+    animation: orb-drift 19s ease-in-out infinite alternate-reverse
+}
+
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+    opacity: 0;
+    transition: opacity .8s var(--ease), transform .8s var(--ease)
+}
+
+.reveal {
+    transform: translateY(24px)
+}
+
+.reveal-left {
+    transform: translateX(-26px)
+}
+
+.reveal-right {
+    transform: translateX(26px)
+}
+
+.reveal-scale {
+    transform: scale(.97)
+}
+
+.reveal.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible,
+.reveal-scale.is-visible {
+    opacity: 1;
+    transform: none
+}
+
+.service-card:nth-child(2),
+.benefit:nth-child(2),
+.stack-item:nth-child(2) {
+    transition-delay: .08s
+}
+
+.service-card:nth-child(3),
+.benefit:nth-child(3),
+.stack-item:nth-child(3) {
+    transition-delay: .16s
+}
+
+.service-card:nth-child(4),
+.benefit:nth-child(4),
+.stack-item:nth-child(4) {
+    transition-delay: .24s
+}
+
+.service-card:nth-child(5),
+.benefit:nth-child(5),
+.stack-item:nth-child(5) {
+    transition-delay: .32s
+}
+
+@keyframes hero-enter {
+    from {
+        opacity: 0;
+        transform: translateY(15px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes hero-visual-enter {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(.98)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1)
+    }
+}
+
+@keyframes orb-drift {
+    from {
+        transform: translate3d(-10px, -8px, 0)
+    }
+
+    to {
+        transform: translate3d(18px, 15px, 0)
+    }
+}
+
+@media(max-width:760px) {
+
+    .floating-code,
+    .floating-chip,
+    .portrait-aura {
+        animation: none
+    }
+
+    .reveal-left,
+    .reveal-right {
+        transform: translateY(18px)
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .hero-intro,
+    .hero-name,
+    .hero h1,
+    .hero-lead,
+    .hero-description,
+    .hero-tags,
+    .hero-actions,
+    .scroll-cue,
+    .hero-visual {
+        opacity: 1;
+        animation: none
+    }
+
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
+        opacity: 1;
+        transform: none
+    }
+}
